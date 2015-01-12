@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D9DFB2E4-BC9D-4269-B039-B460A627F741</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SleepTimer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9EE852CEEF0DAB3AEBBF9B717587B8941B908034</key>
+		<string>https://github.com/alancodvo/SleepTimer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SleepTimer.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9EE852CEEF0DAB3AEBBF9B717587B8941B908034</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/alancodvo/SleepTimer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9EE852CEEF0DAB3AEBBF9B717587B8941B908034</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9EE852CEEF0DAB3AEBBF9B717587B8941B908034</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SleepTimer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -412,6 +412,7 @@
 				E748B5B41A634DDA0066A644 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E748B5B51A634DDA0066A644 /* Build configuration list for PBXNativeTarget "SleepTimerTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +421,7 @@
 				E748B5B71A634DDA0066A644 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
