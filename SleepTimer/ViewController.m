@@ -9,10 +9,6 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
-@property (weak, nonatomic) IBOutlet UIDatePicker *timeChange;
-@property (weak, nonatomic) IBOutlet UIButton *createButton;
-
 @end
 
 @implementation ViewController
@@ -20,6 +16,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // iewControllerクラスのインスタンスを生成する
+    ViewController *buhin= [ViewController new];
+    // questionlabelに値を設定する
+    buhin.questionLabel = @"あああ";
+    
+    // questionlabelから値を取得する
+    NSString *label = buhin.questionLabel;
+    
+    NSLog(@"%@", label);
 }
 
 - (void)didReceiveMemoryWarning {
