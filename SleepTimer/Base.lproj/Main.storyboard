@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日何時に起きた？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-fo-uq1">
-                                <rect key="frame" x="223.5" y="80" width="153" height="20.5"/>
+                                <rect key="frame" x="223" y="80" width="153" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eaw-L2-GbY">
-                                <rect key="frame" x="285" y="499.5" width="30" height="30"/>
+                                <rect key="frame" x="285" y="530" width="30" height="30"/>
                                 <state key="normal" title="設定">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -31,6 +31,12 @@
                                     <action selector="createTime:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nA3-JD-myD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UL-Da-Woo">
+                                <rect key="frame" x="278" y="479" width="43" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="54O-Tv-r2m">
                                 <rect key="frame" x="140" y="192" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="442726408.15940398">
@@ -45,11 +51,14 @@
                         <constraints>
                             <constraint firstItem="Eaw-L2-GbY" firstAttribute="top" secondItem="54O-Tv-r2m" secondAttribute="bottom" constant="50" id="EEa-p0-iJI"/>
                             <constraint firstItem="54O-Tv-r2m" firstAttribute="top" secondItem="tcm-fo-uq1" secondAttribute="bottom" constant="50" id="GIx-p4-MPc"/>
+                            <constraint firstItem="Eaw-L2-GbY" firstAttribute="top" secondItem="4UL-Da-Woo" secondAttribute="bottom" constant="30" id="Kp0-HS-4hb"/>
                             <constraint firstAttribute="centerY" secondItem="54O-Tv-r2m" secondAttribute="centerY" id="W2a-FO-ykZ"/>
                             <constraint firstAttribute="centerX" secondItem="54O-Tv-r2m" secondAttribute="centerX" id="Zk1-fs-9Iu"/>
                             <constraint firstItem="tcm-fo-uq1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="60" id="dfi-am-rS6"/>
                             <constraint firstAttribute="centerX" secondItem="Eaw-L2-GbY" secondAttribute="centerX" id="fZC-ra-iEN"/>
+                            <constraint firstItem="4UL-Da-Woo" firstAttribute="top" secondItem="54O-Tv-r2m" secondAttribute="bottom" constant="30" id="gbe-o1-Stx"/>
                             <constraint firstAttribute="centerX" secondItem="tcm-fo-uq1" secondAttribute="centerX" id="q3o-HV-E1C"/>
+                            <constraint firstAttribute="centerX" secondItem="4UL-Da-Woo" secondAttribute="centerX" id="ymD-uu-9aM"/>
                         </constraints>
                     </view>
                     <connections>

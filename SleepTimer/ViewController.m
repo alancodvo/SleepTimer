@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // iewControllerクラスのインスタンスを生成する
+    // ViewControllerクラスのインスタンスを生成する
     ViewController *buhin= [ViewController new];
     // questionlabelに値を設定する
     buhin.questionLabel = @"あああ";
@@ -27,11 +27,19 @@
     NSLog(@"%@", label);
 }
 
+@synthesize questionLabel, timeChange;
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)selectTime:(id)sender {
+    //ラベルに表示する日付・時刻のフォーマットを指定
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    df.dateFormat = @"HH時mm分";
+    
+    //ラベルに指定したフォーマットで表示
+    questionLabel.text = [df stringFromDate:timeChange.date];
 }
 - (IBAction)createTime:(id)sender {
 }
