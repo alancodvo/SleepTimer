@@ -16,15 +16,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // ViewControllerクラスのインスタンスを生成する
-    ViewController *buhin= [ViewController new];
-    // questionlabelに値を設定する
-    buhin.questionLabel = @"あああ";
-    
-    // questionlabelから値を取得する
-    NSString *label = buhin.questionLabel;
-    
-    NSLog(@"%@", label);
+//    // ViewControllerクラスのインスタンスを生成する
+//    ViewController *index= [ViewController new];
+//    // timeLabelに選択した時刻を設定する
+//    // index.timeLabel = ;
+//    
+//    // timeLabelから値を取得する
+//    NSString *selectedTime = index.timeLabel;
+//    
+//    NSLog(@"%@", selectedTime);
 }
 
 @synthesize questionLabel, timeChange;
@@ -33,15 +33,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)selectTime:(id)sender {
-    //ラベルに表示する日付・時刻のフォーマットを指定
-    NSDateFormatter *df = [[NSDateFormatter alloc]init];
-    df.dateFormat = @"HH時mm分";
-    
-    //ラベルに指定したフォーマットで表示
-    questionLabel.text = [df stringFromDate:timeChange.date];
-}
-- (IBAction)createTime:(id)sender {
+
+- (IBAction)timerSelect:(id)sender {
 }
 
+- (IBAction)dcideTime:(UIButton *)sender {
+    NSLog(@"ログ");
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"HH:mm:ss"];
+    NSDate *now = [NSDate date];
+    self.timeLabel.text = [formatter stringFromDate:now];
+}
 @end
