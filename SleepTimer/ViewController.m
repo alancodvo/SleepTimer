@@ -26,5 +26,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)selectTime:(id)sender {
+}
+- (IBAction)createTime:(id)sender {
+}
 
 @end
