@@ -9,6 +9,9 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (weak, nonatomic) IBOutlet UIDatePicker *timeChange;
+@property (weak, nonatomic) IBOutlet UIButton *createButton;
 
 @end
 

@@ -46,6 +46,11 @@
                             <constraint firstAttribute="centerX" secondItem="tcm-fo-uq1" secondAttribute="centerX" id="q3o-HV-E1C"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="createButton" destination="Eaw-L2-GbY" id="HOQ-hy-ap4"/>
+                        <outlet property="questionLabel" destination="tcm-fo-uq1" id="UA0-bd-7rk"/>
+                        <outlet property="timeChange" destination="54O-Tv-r2m" id="8Xb-v1-28B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
