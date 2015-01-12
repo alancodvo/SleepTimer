@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -22,50 +23,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eaw-L2-GbY">
-                                <rect key="frame" x="285" y="530.5" width="30" height="30"/>
-                                <state key="normal" title="設定">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dcideTime:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ifc-2M-g4Q"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UL-Da-Woo">
-                                <rect key="frame" x="278" y="479.5" width="43" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="54O-Tv-r2m">
-                                <rect key="frame" x="140" y="192" width="320" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="442726408.15940398">
-                                    <!--2015-01-12 03:33:28 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="timeChange:" destination="vXZ-lx-hvc" eventType="valueChanged" id="CuN-JB-ML4"/>
-                                    <action selector="timerSelect:" destination="vXZ-lx-hvc" eventType="valueChanged" id="U4M-m0-hOa"/>
-                                </connections>
-                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="00:00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gT6-60-EzG">
+                                <rect key="frame" x="46" y="150" width="508" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="54O-Tv-r2m" firstAttribute="top" secondItem="tcm-fo-uq1" secondAttribute="bottom" constant="50" id="GIx-p4-MPc"/>
-                            <constraint firstItem="Eaw-L2-GbY" firstAttribute="top" secondItem="4UL-Da-Woo" secondAttribute="bottom" constant="30" id="Kp0-HS-4hb"/>
-                            <constraint firstAttribute="centerY" secondItem="54O-Tv-r2m" secondAttribute="centerY" id="W2a-FO-ykZ"/>
-                            <constraint firstAttribute="centerX" secondItem="54O-Tv-r2m" secondAttribute="centerX" id="Zk1-fs-9Iu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gT6-60-EzG" secondAttribute="trailing" constant="30" id="0tx-gh-SYJ"/>
+                            <constraint firstItem="gT6-60-EzG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="30" id="9Vq-QP-JWA"/>
+                            <constraint firstAttribute="centerX" secondItem="gT6-60-EzG" secondAttribute="centerX" id="DSV-yx-hvz"/>
+                            <constraint firstItem="gT6-60-EzG" firstAttribute="top" secondItem="tcm-fo-uq1" secondAttribute="bottom" constant="50" id="Msx-qQ-G8L"/>
                             <constraint firstItem="tcm-fo-uq1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="60" id="dfi-am-rS6"/>
-                            <constraint firstAttribute="centerX" secondItem="Eaw-L2-GbY" secondAttribute="centerX" id="fZC-ra-iEN"/>
-                            <constraint firstItem="4UL-Da-Woo" firstAttribute="top" secondItem="54O-Tv-r2m" secondAttribute="bottom" constant="30" id="gbe-o1-Stx"/>
                             <constraint firstAttribute="centerX" secondItem="tcm-fo-uq1" secondAttribute="centerX" id="q3o-HV-E1C"/>
-                            <constraint firstAttribute="centerX" secondItem="4UL-Da-Woo" secondAttribute="centerX" id="ymD-uu-9aM"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="createButton" destination="Eaw-L2-GbY" id="HOQ-hy-ap4"/>
                         <outlet property="questionLabel" destination="tcm-fo-uq1" id="UA0-bd-7rk"/>
-                        <outlet property="timeChange" destination="54O-Tv-r2m" id="8Xb-v1-28B"/>
-                        <outlet property="timeLabel" destination="4UL-Da-Woo" id="Avb-lG-Msx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
