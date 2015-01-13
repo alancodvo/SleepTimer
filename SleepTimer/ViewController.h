@@ -14,5 +14,5 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *tF;
 
-- (IBAction)tfSub:(UITextField *)sender;
+- (void)openControl:(UITextField *)tfsub;
 @end

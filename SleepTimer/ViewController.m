@@ -24,6 +24,7 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     return NO;
+    [self openControl:textField];
 }
 @synthesize tF;
 
@@ -31,6 +32,9 @@
     [self setTF:nil];
 }
 
-- (IBAction)tfSub:(UITextField *)sender {
+- (void)openControl:(UITextField *)tfSub{
+    
+    
+    
 }
 @end

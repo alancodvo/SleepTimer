@@ -28,7 +28,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="tfSub:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="sr7-27-Q6V"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="O9J-Oa-wEC"/>
                                 </connections>
                             </textField>
