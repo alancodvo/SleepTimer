@@ -8,17 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-<UIPickerViewDelegate>  // PickerViewのデータやタップ時のイベントのため
-{
-    NSMutableArray *hour, *minute;    // PickerViewの年と月のデータ保持用
-}
+@interface ViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
-@property (weak, nonatomic) IBOutlet UIDatePicker *timeChange;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UIButton *createButton;
-- (IBAction)timerSelect:(id)sender; // 時刻選んだ時のアクション
-- (IBAction)dcideTime:(UIButton *)sender;　// 設定ボタン押した時のアクション
 
+@property (strong, nonatomic) IBOutlet UITextField *tF;
+
+- (IBAction)tfSub:(UITextField *)sender;
 @end

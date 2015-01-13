@@ -27,6 +27,10 @@
                                 <rect key="frame" x="46" y="150" width="508" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="tfSub:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="sr7-27-Q6V"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="O9J-Oa-wEC"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -41,6 +45,7 @@
                     </view>
                     <connections>
                         <outlet property="questionLabel" destination="tcm-fo-uq1" id="UA0-bd-7rk"/>
+                        <outlet property="tF" destination="gT6-60-EzG" id="5BI-ch-BRP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

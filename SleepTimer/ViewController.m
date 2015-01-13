@@ -15,33 +15,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    // ViewControllerクラスのインスタンスを生成する
-//    ViewController *index= [ViewController new];
-//    // timeLabelに選択した時刻を設定する
-//    // index.timeLabel = ;
-//    
-//    // timeLabelから値を取得する
-//    NSString *selectedTime = index.timeLabel;
-//    
-//    NSLog(@"%@", selectedTime);
 }
-
-@synthesize questionLabel, timeChange;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)timerSelect:(id)sender {
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    return NO;
+}
+@synthesize tF;
+
+-(void)dealloc{
+    [self setTF:nil];
 }
 
-- (IBAction)dcideTime:(UIButton *)sender {
-    NSLog(@"ログ");
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"HH:mm:ss"];
-    NSDate *now = [NSDate date];
-    self.timeLabel.text = [formatter stringFromDate:now];
+- (IBAction)tfSub:(UITextField *)sender {
 }
 @end
