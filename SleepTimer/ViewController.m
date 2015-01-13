@@ -51,6 +51,35 @@
 
 - (void)openControl:(UITextField *)tfSub{
     
+    // Text　FieldのインスタンスポインタをtxtSelectedに格納する。
+    txtSelected = tfSub;
+    
+    // UIFieldが変更される前の値を保管する。
+    saveStr = tfSub.text;
+    
+    // UIActionViewを設定する。
+    basicSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:,nil];
+    [basicSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+    
+    // UIDatePickerを時間表記で設定する。
+    CGRect pickerFrame = CGRectMake(0, 44, 0, 0);
+    UIDatePicker *viewDatePicker = [[UIDatePicker alloc] initWithFrame:pickerFrame];
+    [viewDatePicker setDatePickerMode:UIDatePickerModeTime];
+    viewDatePicker.minuteInterval = 5;
+    
+    // 設定されているUITextFieldの値をUIDatePickerに反映させる。
+    NSDateFormatter *inputDateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *local = [[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"];
+    [inputDateFormatter setLocale:local];
+    [inputDateFormatter setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar]];
+    [inputDateFormatter setDateFormat:@"HH:MM"];
+    NSString *inputDateStr = tfSub.text;
+    NSDate *inputDate = [inputDateFormatter dateFromString:inputDateStr];
+    [viewDatePicker setLocale:local];
+    [viewDatePicker setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar]];
+    [viewDatePicker setDate:inputDate];
+    
+    
     
     
 }
