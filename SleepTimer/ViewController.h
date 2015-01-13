@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate> {
+    UITextField *txtSelected;
+    UIActionSheet *basicSheet;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 
 @property (strong, nonatomic) IBOutlet UITextField *tF;
+
+@property (strong, nonatomic) NSDate *dataTime;
 
 - (void)openControl:(UITextField *)tfsub;
 @end
