@@ -71,12 +71,12 @@
     NSDateFormatter *inputDateFormatter = [[NSDateFormatter alloc] init];
     NSLocale *local = [[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"];
     [inputDateFormatter setLocale:local];
-    [inputDateFormatter setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar]];
+    [inputDateFormatter setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]];
     [inputDateFormatter setDateFormat:@"HH:MM"];
     NSString *inputDateStr = tfSub.text;
     NSDate *inputDate = [inputDateFormatter dateFromString:inputDateStr];
     [viewDatePicker setLocale:local];
-    [viewDatePicker setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar]];
+    [viewDatePicker setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]];
     [viewDatePicker setDate:inputDate];
     
     // UIDatePickerの値が変わった時に発生するイベントに対するアクションを指定する。
