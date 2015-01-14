@@ -20,4 +20,7 @@
 @property (strong, nonatomic) NSDate *dataTime;
 
 - (void)openControl:(UITextField *)tfsub;
+- (void)getSelectedTime;
+- (void)dismissSet;
+- (void)cancelSet;
 @end
