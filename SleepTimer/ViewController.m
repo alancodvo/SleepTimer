@@ -93,7 +93,7 @@
     
     [inputDateFormatter setLocale:locale];
     
-    [inputDateFormatter setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar]];
+    [inputDateFormatter setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]];
     
     [inputDateFormatter setDateFormat:@"H:mm"];
     
@@ -122,7 +122,7 @@
     saveStr = tfSub.text;
     
     // UIActionViewを設定する。
-    basicSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:,nil];
+    basicSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     [basicSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
     
     // UIDatePickerを時間表記で設定する。
