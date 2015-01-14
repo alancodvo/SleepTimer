@@ -28,7 +28,7 @@
     NSDateFormatter *inputDateFormatter = [[NSDateFormatter alloc] init];
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"];
     [inputDateFormatter setLocale:locale];
-    [inputDateFormatter setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar]];
+    [inputDateFormatter setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]];
     [inputDateFormatter setDateFormat:@"HH:mm"];
     NSString *inputDateStr = @"00:00";
     NSDate *inputDate = [inputDateFormatter dateFromString:inputDateStr];
@@ -39,15 +39,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    return NO;
-    [self openControl:textField];
-}
 
 -(void)dealloc{
     [self setTF:nil];
     [self setDataTime:nil];
 }
+
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    [self openControl:textField];
+    return NO;
+}
+
 
 - (void)getSelectedTime{
     
@@ -157,6 +160,7 @@
     UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     UIBarButtonItem *setButton_1 = [[UIBarButtonItem alloc] initWithTitle:@"設定" style:UIBarButtonItemStyleDone target:self action:@selector(dismissSet)];
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"キャンセル" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelSet)];
+    
     
     [controlToolBar setItems:[NSArray arrayWithObjects:spacer, setButton_1, cancelButton, nil] animated:NO];
     
