@@ -79,6 +79,28 @@
     [viewDatePicker setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar]];
     [viewDatePicker setDate:inputDate];
     
+    // UIDatePickerの値が変わった時に発生するイベントに対するアクションを指定する。
+    [viewDatePicker addTarget:self action:@selector(getSelectedTime) forControlEvents:UIControlEventValueChanged]; // getSelectedTimeがない？
+    
+    // UIDatePickerをUIActionViewに組み込む。
+    [basicSheet addSubview:viewDatePicker];
+    
+    // UIActionViewがモーダルなため、抜け出すためのボタン・ツールバーを生成する。
+    UIToolbar *controlToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, basicSheet.bounds.size.width, 44)];
+    [controlToolBar setBarStyle:UIBarStyleBlack];
+    [controlToolBar sizeToFit];
+    
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    UIBarButtonItem *setButton_1 = [[UIBarButtonItem alloc] initWithTitle:@"設定" style:UIBarButtonItemStyleDone target:self action:@selector(dismissSet)]; // @selectorがちゃんと動いてない？
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"キャンセル" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelSet)]; // UIBarButtonItemStyleBorderedと@selectorのところが微妙
+    
+    [controlToolBar setItems:[NSArray arrayWithObjects:spacer, setButton_1, cancelButton, nil] animated:NO];
+    
+    // ツールバーをUIActionViewに埋め込む
+    [basicSheet addSubview:controlToolBar];
+    // UIActionViewの表示・配置
+    [basicSheet showInView:self.view];
+    [basicSheet setBounds:CGRectMake(0, 0, 320, 520)];
     
     
     
