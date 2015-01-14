@@ -49,6 +49,70 @@
     [self setDataTime:nil];
 }
 
+- (void)getSelectedTime{
+    
+    // 変更されたUIDatePickerの値に合わせて、NSDate型で値を格納する。
+    
+    NSArray *listOfViews = [basicSheet subviews];
+    
+    for (UIView *subView in listOfViews) {
+        
+        if ([subView isKindOfClass:[UIDatePicker class]]) {
+            
+            dataTime = [(UIDatePicker *) subView date];
+            
+        }
+        
+    }
+    
+    // 変更されたUIDatePickerの値に合わせて、UITextFieldの値を変更する。
+    
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    
+    [format setDateFormat:@"H:mm"];
+    
+    [txtSelected setText:[format stringFromDate:dataTime]];
+    
+}
+
+- (void)dismissSet{
+    
+    [basicSheet dismissWithClickedButtonIndex:0 animated:YES];
+    
+}
+
+
+
+- (void)cancelSet{
+    
+    // UITextFieldの値を変更前の値に戻す。
+    
+    NSDateFormatter *inputDateFormatter = [[NSDateFormatter alloc] init];
+    
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"];
+    
+    [inputDateFormatter setLocale:locale];
+    
+    [inputDateFormatter setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar]];
+    
+    [inputDateFormatter setDateFormat:@"H:mm"];
+    
+    NSString *inputDateStr = saveStr;
+    
+    NSDate *inputDate = [inputDateFormatter dateFromString:inputDateStr];
+    
+    
+    
+    dataTime = inputDate;
+    
+    
+    
+    txtSelected.text = saveStr;
+    
+    [basicSheet dismissWithClickedButtonIndex:0 animated:YES];
+    
+}
+
 - (void)openControl:(UITextField *)tfSub{
     
     // Text　FieldのインスタンスポインタをtxtSelectedに格納する。
@@ -80,7 +144,7 @@
     [viewDatePicker setDate:inputDate];
     
     // UIDatePickerの値が変わった時に発生するイベントに対するアクションを指定する。
-    [viewDatePicker addTarget:self action:@selector(getSelectedTime) forControlEvents:UIControlEventValueChanged]; // getSelectedTimeがない？
+    [viewDatePicker addTarget:self action:@selector(getSelectedTime) forControlEvents:UIControlEventValueChanged];
     
     // UIDatePickerをUIActionViewに組み込む。
     [basicSheet addSubview:viewDatePicker];
@@ -91,8 +155,8 @@
     [controlToolBar sizeToFit];
     
     UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    UIBarButtonItem *setButton_1 = [[UIBarButtonItem alloc] initWithTitle:@"設定" style:UIBarButtonItemStyleDone target:self action:@selector(dismissSet)]; // @selectorがちゃんと動いてない？
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"キャンセル" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelSet)]; // UIBarButtonItemStyleBorderedと@selectorのところが微妙
+    UIBarButtonItem *setButton_1 = [[UIBarButtonItem alloc] initWithTitle:@"設定" style:UIBarButtonItemStyleDone target:self action:@selector(dismissSet)];
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"キャンセル" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelSet)];
     
     [controlToolBar setItems:[NSArray arrayWithObjects:spacer, setButton_1, cancelButton, nil] animated:NO];
     
