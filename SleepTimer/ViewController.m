@@ -25,6 +25,7 @@
 //    NSString *selectedTime = index.timeLabel;
 //    
 //    NSLog(@"%@", selectedTime);
+    
 }
 
 @synthesize questionLabel, timeChange;
