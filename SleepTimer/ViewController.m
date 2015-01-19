@@ -16,15 +16,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    // ViewControllerクラスのインスタンスを生成する
-//    ViewController *index= [ViewController new];
-//    // timeLabelに選択した時刻を設定する
-//    // index.timeLabel = ;
-//    
-//    // timeLabelから値を取得する
-//    NSString *selectedTime = index.timeLabel;
-//    
-//    NSLog(@"%@", selectedTime);
+    // ViewControllerクラスのインスタンスを生成する
+    ViewController *index= [ViewController new];
+    // timeLabelに選択した時刻を設定する
+    // index.timeLabel = ;
+    
+    // timeLabelから値を取得する
+    NSString *selectedTime = index.timeLabel;
+    
+    NSLog(@"%@", selectedTime);
     
 }
 
@@ -36,6 +36,7 @@
 }
 
 - (IBAction)timerSelect:(id)sender {
+    
 }
 
 - (IBAction)dcideTime:(UIButton *)sender {

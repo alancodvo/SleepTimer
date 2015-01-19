@@ -31,11 +31,12 @@
                                     <action selector="dcideTime:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ifc-2M-g4Q"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="54O-Tv-r2m">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="54O-Tv-r2m">
                                 <rect key="frame" x="140" y="192" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="442726408.15940398">
                                     <!--2015-01-12 03:33:28 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
                                 <connections>
                                     <action selector="timerSelect:" destination="vXZ-lx-hvc" eventType="valueChanged" id="U4M-m0-hOa"/>
                                 </connections>
